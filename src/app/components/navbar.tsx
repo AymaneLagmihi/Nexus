@@ -10,7 +10,9 @@ const link = [
 ]
 
 const Navbar = () => {
+
   const path = usePathname();
+
   return (
     <>
       <nav className='relative mx-auto w-full items-center justify-between h-24 px-[125px] py-2 my-1 inline-flex'>
@@ -24,9 +26,7 @@ const Navbar = () => {
         
         <div className='flex items-center justify-end gap-20 '>
           {link.map((l)=> (
-            <Link href={l.href} className={`${ l.href === path ? "text-gray font-medium tracking-wide":""
-
-            }text-black-400 font-medium tracking-wide`}>
+            <Link href={l.href} className="text-black-400 font-medium tracking-wide">
               {l.text}
             </Link>
           ))
