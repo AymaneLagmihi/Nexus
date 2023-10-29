@@ -38,7 +38,7 @@ export default function Home() {
           width={415}
           height={312}
           quality={100} className=''/>
-
+          
         <h1 className='text-black text-4xl font-extrabold my-4'>A habit tracker for celebrating daily goals</h1>
         <p className='text-black text-opacity-60 text-xl font-medium'>Efficiency is the bridge that turns tasks into accomplishments.</p>
         
