@@ -2,16 +2,13 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
-const link = [
+const links = [
   { href: "/Pricing", text:"Pricing"},
   { href: "/Signin", text:"Signin"},
 ]
 
 const Navbar = () => {
-
-  const path = usePathname();
 
   return (
     <>
@@ -25,9 +22,13 @@ const Navbar = () => {
         />
         
         <div className='flex items-center justify-end gap-20 '>
-          {link.map((l)=> (
-            <Link href={l.href} className="text-black-400 font-medium tracking-wide">
-              {l.text}
+          {links.map((link, index)=> (
+            <Link
+              key={index}
+              href={link.href}
+              className="text-black-400 font-medium tracking-wide"
+            >
+              {link.text}
             </Link>
           ))
           }
