@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import {Button} from "@nextui-org/react";
 
 const links = [
   { href: "/Pricing", text:"Pricing"},
@@ -34,8 +35,10 @@ const Navbar = () => {
             </Link>
           ))
           }
-          <Link href="/Signin" className='w-50 h-11 px-5 py-1.5 bg-black rounded-full justify-center items-center gap-2.5 inline-flex'>
-            <div className='text-white px-5 font-medium tracking-wide'>Try for Free</div>
+          <Link href="/Signin" >
+            <Button radius="full" className='bg-black w-50 h-11 px-5 py-1.5 rounded-full justify-center items-center gap-2.5 inline-flex text-white font-medium tracking-wide'>
+              Try for Free
+            </Button>
           </Link>
         </div>
       </nav>
