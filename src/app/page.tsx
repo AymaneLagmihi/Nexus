@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useEffect } from "react";
 import Navbar from './components/navbar'
 import Image from 'next/image'
 import { useState } from 'react';
@@ -7,6 +7,35 @@ import { motion } from "framer-motion";
 
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [Tasks, setTasks] = useState<
+      {
+        id: string;
+        name: string;
+        description: string;
+        date: string;
+        completed: boolean;
+      }[]
+  >([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchTasks();
+  
+    console.log("We have fetched the tasks in the backend, and now here they are:", Tasks);
+  }, []);
+
+  const fetchTasks = async () => {
+    return await fetch("/api/tasks", {
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setTasks(data);
+        setIsLoading(false);
+      });
+   };
 
   return (
     <div className='relative min-h-screen w-full max-w-full h-auto mx-auto'>
